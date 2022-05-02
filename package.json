@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "node": "^17.7.2",
+    "nodemon": "^2.0.16"
+  },
+  "name": "projeto3-modulo-3",
+  "description": "PROJETO 3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon -e js,html,css,ejs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qualose123/PROJETO3-MODULO-3.git"
+  },
+  "author": "raphael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qualose123/PROJETO3-MODULO-3/issues"
+  },
+  "homepage": "https://github.com/qualose123/PROJETO3-MODULO-3#readme"
+}
