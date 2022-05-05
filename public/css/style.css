@@ -27,8 +27,11 @@ header{
 header nav ul{
     display: flex;
     font-size: 30px;
-    gap: 30px; /* gap dar uma distância entre os elementos filhos*/
+    gap: 65px; /* gap dar uma distância entre os elementos filhos*/
     list-style: none;/* adiciona estilos ou remover estilos de uma linha*/
+}
+header li img#logo{
+    height: 20px;
 }
 header nav{
     width: 100%; /* aki ele pega 100% do pai dele q é o header*/
@@ -82,3 +85,20 @@ article div.card_name{
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width: 600px) {
+   main>section>div#iframefilme iframe{
+        width: 90vw;
+        height: 80vh;
+   }
+   nav ul li{
+     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    list-style: none;
+    font-size: 20px;
+    margin-right: -3rem;
+    
+   }
+ 
+  }
