@@ -5,14 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Aki ja esta configurado para reconhecer a pasta public, ent n precisa colocar ela, só as pastas subsequentes no href-->
+    <script
+      src="https://kit.fontawesome.com/71f92ea1b3.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Document</title>
+    <title>Catálogo</title>
   </head>
   <body>
     <!--aki esse includes está unindo o header e footer nesse código ejs, sendo assim fica possivel estilizar com o css tudo oq está aki no index.ejs-->
     <%-include('./partials/header.ejs')%>
     <main>
-      <h1>INDEX</h1>
+      <section id="card_container">
+        <% listFilmes.forEach(element => { %>
+        <a href="/detalhes/<%=element.id%>">
+        <article class="cards">
+          <div class="card_img">
+            <img src="<%=element.imagem%>" alt="" />
+          </div>
+          <div class="card_name"><%=element.nome_filme%></div>
+        </article>
+      </a>
+        <% }) %>
+      </section>
     </main>
     <%-include('./partials/footer.ejs')%>
   </body>

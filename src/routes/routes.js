@@ -5,9 +5,12 @@ import express from "express";
 esse export, ele está exportando a constante para que o index.js reconheça essa constante e só funciona em arquivos JS*/
 export const routers = express.Router()
 //aki estou importando a constante da rota controlador
-import {getIndex} from '../controllers/McuController.js'
+import {getIndex,getDetalhes} from '../controllers/McuController.js'
 
 //conectando a rota index
 routers.get("/",getIndex)
+routers.get('/detalhes/:id',getDetalhes)
+
+
   
 
