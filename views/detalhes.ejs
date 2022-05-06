@@ -5,34 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="imagem/png" href="https://www.imagensempng.com.br/wp-content/uploads/2021/08/Logo-Vingadores-Png-300x300.png" />
+    <script
+    src="https://kit.fontawesome.com/71f92ea1b3.js"
+    crossorigin="anonymous"
+  ></script>
     <title>Detalhes</title>
   </head>
   <body>
     <%-include('./partials/header.ejs')%>
     <main>
-      <div><%=filmesDetalhes.nome_filme%></div>
+      <div></div>
       <section id="section_container">
-        <div id="iframefilme">
-        <iframe  <%=filmesDetalhes.iframe %>></iframe>
+        <div>
+        <iframe id="iframefilme" <%=filmesDetalhes.iframe %>></iframe>
         </div>
         <table>
           <thead>
-            <th>Detalhes</th>
+            <th></th>
           </thead>
           <tbody>
-            <td>
-              <tr>
-                Filme
-              </tr>
-              <tr>
-                <%filmesDetalhes.nome%>
-              </tr>
-            </td>
+            <div id="entradaFilme">
+                <%=filmesDetalhes.nome_filme%>
+            
+              <%=filmesDetalhes.ano_filme%>
+            </div>
+            <form id="formDetalhes">
+                <fieldset id="field_main">
+                  <legend>Detalhes</legend>
+                <fieldset>
+                  <label> NOME: <%=filmesDetalhes.nome_filme%></label>
+                </fieldset>
+                <fieldset>
+                  <label> ANO:<%=filmesDetalhes.ano_filme%> </label>
+                </fieldset>
+                <fieldset>
+                  <label> AUTORES:<%=filmesDetalhes.nome_autores%> </label>
+                </fieldset>
+                <fieldset>
+                  <label>
+                    ATORES: <%=filmesDetalhes.nome_atores%>
+                  </label>
+                </fieldset>
+            </form>
           </tbody>
           <tfoot></tfoot>
         </table>
       </section>
     </main>
     <%-include('./partials/footer.ejs')%>
+    <script src="/script.js"></script>
   </body>
 </html>

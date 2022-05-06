@@ -11,12 +11,11 @@ body{
     height: 100vh;
     width: 100vw;
     max-width: 100%; /*max-width ajuda a não dar scroll na tela, ou seja, ele continua colocando informação na tela e extende sem sobrepor o footer*/
-    background-color: #AA1DF0;
-   
-    
+    background-color: #AA1DF0;   
 }
 header{
    display: flex;
+   align-items: center;
    justify-content: center;/*Só funciona com display flex*/
    background-color: black;
    height: 10%; /*usa 10% do espaço total*/
@@ -26,19 +25,58 @@ header{
 
 header nav ul{
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
     gap: 65px; /* gap dar uma distância entre os elementos filhos*/
     list-style: none;/* adiciona estilos ou remover estilos de uma linha*/
 }
-header li img#logo{
-    height: 20px;
+.dropdown-menu-icon{
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
 }
-header nav{
-    width: 100%; /* aki ele pega 100% do pai dele q é o header*/
+.dropdown-menu-conteudo{
     display: flex;
-    justify-content: center;/*alinha na vertical*/
-    align-items: center;/*Alinha na horizontal*/
+    gap: 65px;
 }
+
+
+header img#logo{
+    display: flex;
+    height: 20px;
+    margin-right: 20px;
+}
+
+iframe#iframefilme{
+    width: 100vh;
+}
+div#entradaFilme{
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color:#1912F5 ;
+   font-size: 25px;
+   border:solid 1px;
+   padding: 3rem;
+   background-color: #E0C755;
+   border-radius: 30px;
+}
+
+fieldset#field_main{
+    display: table-column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: black;
+    width:50vw
+    
+}
+fieldset#field_main legend{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: vingadores;
+    color:green;
+    font-size: 30px;
+}
+
 
 /*utiliza no mínimo 80% do espaço total*/
 main{
@@ -46,11 +84,18 @@ main{
 }
 /*usa 10% do espaço total*/
 footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 10%;
     background-color: black;
+    font-family: vingadores; 
+    font-size: 35px; 
     color: white;
-    font-family: vingadores;
-    
+}
+footer a.rodape{
+    color: white;
+    text-decoration: none;
 }
 section#card_container{
     display: flex;
@@ -86,11 +131,27 @@ article div.card_name{
     justify-content: center;
 }
 
-@media only screen and (max-width: 600px) {
-   main>section>div#iframefilme iframe{
-        width: 90vw;
-        height: 80vh;
-   }
+@media only screen and (max-width: 579px) {
+    
+    .dropdown-menu-conteudo{
+        display: none;
+    }
+    .dropdown-menu-icon{
+        display: inline;
+        font-size: 2rem;
+        cursor: pointer;
+        color: yellow;
+    }
+    .dropdown-menu-conteudo{
+        display: none;
+        position: absolute;
+        z-index: 999;
+        overflow: auto;
+        background-color: black;
+        width: 50%;
+        padding: 1rem;
+    }
+
    nav ul li{
      display: flex;
     justify-content: flex-start;
@@ -98,7 +159,25 @@ article div.card_name{
     list-style: none;
     font-size: 20px;
     margin-right: -3rem;
-    
    }
- 
+   iframe#iframefilme{
+       width: 90vw;
+   }
+   fieldset#field_main{
+       width: 90vw;
+   }
+   footer{
+       font-size: 20px;
+   }
   }
+  @media only screen and (min-width: 700px) and (max-width:980px){
+    iframe#iframefilme{
+        width: 90vw;
+        height: 50vh;
+    }
+    fieldset#field_main{
+        width: 90vw;
+    }
+  }
+      
+  
