@@ -43,11 +43,14 @@ export const mcu = connection.define(
   }
 );
 
-const initTable = async ()=>{
-  try{
-    await mcu.sync()
-  }catch(error){
-    return error.message
+const initTable = async () => {
+  try {
+      await mcu.sync()
+  }
+  catch(error){
+      error.message
   }
 }
+
 initTable()
+
