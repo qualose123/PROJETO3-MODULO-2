@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Aki ja esta configurado para reconhecer a pasta public, ent n precisa colocar ela, só as pastas subsequentes no href-->
-    <script
-      src="https://kit.fontawesome.com/71f92ea1b3.js"
-      crossorigin="anonymous"
-    ></script>
+
     <link rel="stylesheet" href="/css/style.css" />
     <title>Catálogo</title>
   </head>
@@ -19,13 +16,19 @@
       <section id="card_container">
         <% listFilmes.forEach(element => { %>
         <a href="/detalhes/<%=element.id%>">
-        <article class="cards">
-          <div class="card_img">
-            <img src="<%=element.imagem%>" alt="" />
-          </div>
-          <div class="card_name"><%=element.nome_filme%></div>
-        </article>
-      </a>
+          <article class="cards">
+            <div class="card_img">
+              <img src="<%=element.imagem%>" alt="" />
+            </div>
+            <div class="card_name"><%=element.nome_filme%></div>
+          </article>
+        </a>
+        <div class="btn-container">
+          <a href="/deletar/<%= element.id%>"
+            ><i class="fa-solid fa-trash-can"></i
+          ></a>
+          <a href="/editar/"<%= element.id%>><i class="fa-solid fa-pen"></a></i></a>
+        </div>
         <% }) %>
       </section>
     </main>

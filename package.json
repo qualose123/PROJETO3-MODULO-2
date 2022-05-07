@@ -6,7 +6,9 @@
     "node": "^17.7.2",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.0",
+    "pg-hstore": "^2.3.4"
+
   },
   "name": "projeto3-modulo-3",
   "description": "PROJETO 3",

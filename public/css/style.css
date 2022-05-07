@@ -1,11 +1,18 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: content-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 @font-face {
     font-family:vingadores ;
     src: url('../fonts/AVENGEANCE HEROIC AVENGER BI.ttf');
 }
+
 
 body{
     height: 100vh;
@@ -21,6 +28,10 @@ header{
    height: 10%; /*usa 10% do espaço total*/
    color: white;
     font-family: vingadores;
+}
+header nav#menu ul div a{
+    color: white;
+    text-decoration: none;
 }
 
 header nav ul{
@@ -97,12 +108,51 @@ footer a.rodape{
     color: white;
     text-decoration: none;
 }
+
+
 section#card_container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 16px;
     gap: 16px;
+}
+
+section#form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+}
+section#form_container form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+}
+section#form_container form fieldset{
+    padding: 20px;
+}
+
+form div#btn-container{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 60px;
+}
+form #btn-cadastro{
+    background-color: red;
+    color: #fff;
+
+}
+
+fieldset.field_data{
+    border: none;
+}
+
+legend.legendc{
+    background-color: red;
 }
 section#section_container{
     display: flex;
@@ -113,15 +163,21 @@ section#section_container{
     gap: 16px;
     align-items: center;
 }
+div.btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+    ;
+}
 section article.cards{
-    height: 250px;
-    width: 200px;
-    border: 1px solid;
+    height: 300px;
+    width: 220px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeK_faVSMW2D0-EFJ_RbPnFL2fgzFsbhZsnE9g04L4WVSJQD1FyZBy_FoenxnP-WKAzB0&usqp=CAU');
+    border-radius: 20px;
 }
 section div.card_img{
     display: flex;
-    height: 90%;
-    border: solid 1px;
+    height: 85%;
     justify-content: center;
 
 }
@@ -129,6 +185,8 @@ article div.card_name{
     height: 10%;
     display: flex;
     justify-content: center;
+    color: white;
+    align-items: center;
 }
 
 @media only screen and (max-width: 579px) {
@@ -140,7 +198,7 @@ article div.card_name{
         display: inline;
         font-size: 2rem;
         cursor: pointer;
-        color: yellow;
+        color: white;
     }
     .dropdown-menu-conteudo{
         display: none;

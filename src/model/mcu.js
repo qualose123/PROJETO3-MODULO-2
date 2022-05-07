@@ -42,3 +42,12 @@ export const mcu = connection.define(
     timestamps: false, //INFORMA TODA VEZ QUE FIZER QUALQUER TIPO DE ALTERAÇÃO, APARECE A DATA, HR, EXIBIÇÃO E ETC.
   }
 );
+
+const initTable = async ()=>{
+  try{
+    await mcu.sync()
+  }catch(error){
+    return error.message
+  }
+}
+initTable()

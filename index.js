@@ -7,11 +7,13 @@ import path from "path";
 //aki foi criada uma variavel para reconhecer pastas
 let __dirname = path.resolve(path.dirname(""));
 
+
 //instanciando express em uma constante
 const app = express();
 //criação da constante com a porta do servidor
 const port = 3001;
-
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 app.set("view engine", "ejs");
 app.use(routers); //aki está pedindo ao express instanciar pra usar a constante routers.
 //aki o express está juntando a pasta padrão q é views, com a pasta public e utilizar os arquivos estáticos da mesma
@@ -20,3 +22,4 @@ app.use(express.static(path.join(__dirname, "public")));
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
