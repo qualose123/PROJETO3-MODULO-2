@@ -55,6 +55,7 @@ export const postcadastro= async(req,res)=> {
     // forma mais simples
     await mcu.create({nome_filme,nome_autores,nome_atores,ano_filme,imagem,iframe})
     }
+    res.redirect('/')
   }catch(error){
     res.send(error.message)
   }
@@ -81,7 +82,7 @@ export const postEditar = async (req, res) => {
           imagem,
           iframe
       } = req.body
-      await filmes.update({
+      await mcu.update({
         nome_filme: nome_filme,
         nome_autores: nome_autores,
         nome_atores: nome_atores,
