@@ -5,7 +5,6 @@ import { mcu } from "../model/mcu.js";
 
 export let message = "";
 
-
 export const getIndex = async (req, res) => {
   setTimeout(() => {
     message = "";
@@ -13,7 +12,7 @@ export const getIndex = async (req, res) => {
   try {
     const listFilmes = await mcu.findAll();
     console.log(listFilmes);
-    res.render("index.ejs", { listFilmes,message});
+    res.render("index.ejs", { listFilmes, message });
   } catch (error) {
     res.send(error.message);
   }
@@ -23,7 +22,7 @@ export const getDetalhes = async (req, res) => {
     console.log(req.params.id);
     const filmesDetalhes = await mcu.findByPk(req.params.id);
     console.log(filmesDetalhes);
-    res.render("detalhes.ejs", { filmesDetalhes });
+    res.render("detalhes.ejs", { filmesDetalhes, message });
   } catch (error) {
     res.send(error.message);
   }
@@ -36,7 +35,7 @@ export const getDeletar = async (req, res) => {
         id: req.params.id,
       },
     });
-     message="Filme removido com sucesso!"
+    message = "Filme removido com sucesso!";
     res.redirect("/");
   } catch (error) {
     res.send(error.message);
@@ -44,8 +43,10 @@ export const getDeletar = async (req, res) => {
 };
 
 export const getcadastro = (req, res) => {
-  console.log(req.body);
-  res.render("cadastro.ejs",{message});
+  setTimeout(() => {
+    message = "";
+  }, 1000);
+  res.render("cadastro.ejs", { message });
 };
 
 export const postcadastro = async (req, res) => {
@@ -64,8 +65,8 @@ export const postcadastro = async (req, res) => {
       !imagem ||
       !iframe
     ) {
-      message='Error todos os campos devem ser preenchidos!'
-            res.redirect('/cadastro')
+      message = "Error todos os campos devem ser preenchidos!";
+      res.redirect("/cadastro");
     } else {
       // forma mais simples
       await mcu.create({
@@ -77,7 +78,7 @@ export const postcadastro = async (req, res) => {
         iframe,
       });
     }
-    message="Filme cadastrado com sucesso!"
+    message = "Filme cadastrado com sucesso!";
     res.redirect("/");
   } catch (error) {
     res.send(error.message);
@@ -88,7 +89,8 @@ export const getEditar = async (req, res) => {
   try {
     const filmeAtual = await mcu.findByPk(req.params.id);
     res.render("editar.ejs", {
-      filmeAtual,message
+      filmeAtual,
+      message,
     });
   } catch (error) {
     res.send(error.message);
@@ -114,7 +116,7 @@ export const postEditar = async (req, res) => {
         },
       }
     );
-    message="Filme editado com sucesso!"
+    message = "Filme editado com sucesso!";
     res.redirect("/");
   } catch (error) {
     res.send(error.message);

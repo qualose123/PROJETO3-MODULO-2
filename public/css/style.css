@@ -125,6 +125,11 @@ section#form_container{
     padding: 20px;
     height: 100%;
 }
+form fieldset legend#legende{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+}
 section#form_container form{
     display: flex;
     flex-direction: column;
@@ -142,12 +147,13 @@ section#form_container form fieldset{
 form div#btn-container{
     display: flex;
     justify-content: center;
-    height: 40px;
-    width: 60px;
+     height: 40px;
 }
 form #btn-cadastro{
     background-color: red;
     color: #fff;
+    width: 100%;
+    border-radius: 15px;
 
 }
 
@@ -157,6 +163,9 @@ fieldset.field_data{
 
 legend.legendc{
     background-color: red;
+    border-radius: 15px;
+    font-family: vingadores;
+    font-size: 30px;
 }
 section#section_container{
     display: flex;
@@ -170,9 +179,9 @@ section#section_container{
 div.btn-container{
     display: flex;
     flex-direction: column;
-    gap: 16px
-    ;
+    gap: 16px;
 }
+
 section article.cards{
     height: 300px;
     width: 220px;

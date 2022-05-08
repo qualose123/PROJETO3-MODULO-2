@@ -11,7 +11,7 @@ let __dirname = path.resolve(path.dirname(""));
 //instanciando express em uma constante
 const app = express();
 //criação da constante com a porta do servidor
-const port = 3001;
+const port = 3005;
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.set("view engine", "ejs");
