@@ -9,6 +9,23 @@
 
 ## REQUISITOS DO PROJETO:
 ### Esse será o projeto final do módulo, esse projeto consiste na criação de um catálogo (com tema livre), onde será possível no futuro realizar as 4 operações do CRUD.
-### Geralmente quando trabalhos com CRUD podemos presumir que teremos algumas telas:                                                   Lista:                                                   Uma tela responsável por mostrar a lista de todos os itens do catálogo.                                                Detalhes: Uma tela responsável por acessar informações adicionais do item.                                                 Criar: Uma tela responsável por realizar a criação do item.Editar: Uma tela responsável por realizar a edição do item.Deletar: Uma tela responsável por deletar o item. Lembrando que essas telas podem ter nomes diferentes para a mesma função por exemplo: a Criar pode ser chamada de cadastrar e etc...A avaliação será feita por entregáveis obrigatórios, cada um valerá uma quantidade de pontos, todos começarão com 0 pontos, a cada item entregue, você receberá a quantia pertinente aquela entrega. Persistir os dados através do PostgreSQL com o Sequelize.                             Toda entrada de dados deve ser validada antes.          Criar um menu de navegação em todas as telas.           Criar as telas EJS. Responsividade em todas as telas.  Criar a estilização das páginas.                        Criar as rotas no arquivo INDEX.JS para controlar toda aplicação.                                              Após cadastrar exibir mensagem de sucesso.             Respeitar o padrão MVC.                                 Github organizado do projeto com licença, Read.me preenchido falando do projeto e Gitignore correto.                                                  Projeto postado no Heroku ou Render. 
+### Geralmente quando trabalhos com CRUD podemos presumir que teremos algumas telas:    
+### Lista:                     
+### Uma tela responsável por mostrar a lista de todos os itens do catálogo.   
+### Detalhes: Uma tela responsável por acessar informações adicionais do item. 
+### Criar: Uma tela responsável por realizar a criação do item.
+### Editar: Uma tela responsável por realizar a edição do item.
+### Deletar: Uma tela responsável por deletar o item.
+### Lembrando que essas telas podem ter nomes diferentes para a mesma função por exemplo: a Criar pode ser chamada de cadastrar e etc...A avaliação será feita por entregáveis obrigatórios, cada um valerá uma quantidade de pontos, todos começarão com 0 pontos, a cada item entregue, você receberá a quantia pertinente aquela entrega.
+### Persistir os dados através do PostgreSQL com o Sequelize.                             
+### Toda entrada de dados deve ser validada antes.         
+### Criar um menu de navegação em todas as telas.           
+### Criar as telas EJS. Responsividade em todas as telas.  
+### Criar a estilização das páginas.                       
+### Criar as rotas no arquivo INDEX.JS para controlar toda aplicação. 
+### Após cadastrar exibir mensagem de sucesso.            
+### Respeitar o padrão MVC.                                 
+### Github organizado do projeto com licença, Read.me preenchido falando do projeto e Gitignore correto.                                                
+### Projeto postado no Heroku ou Render. 
 
-## LINK DO DEPLOY: https://catalogo-pf22.onrender.com
+### LINK DO DEPLOY: https://catalogo-pf22.onrender.com
