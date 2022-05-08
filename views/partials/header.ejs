@@ -2,6 +2,11 @@
   src="https://kit.fontawesome.com/71f92ea1b3.js"
   crossorigin="anonymous"
 ></script>
+<% if(message != "") {  %>
+  <section id="message">
+      <p><%= message %></p> <span id="close">&times;</span>
+  </section>
+<% } %>
 <header>
   <img id="logo" src="/img/logo.png" alt="logo" />
   <nav id="menu">

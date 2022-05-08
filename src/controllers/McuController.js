@@ -3,12 +3,17 @@
 import { connection } from "../database/connection.js";
 import { mcu } from "../model/mcu.js";
 
+export let message = "";
+
 
 export const getIndex = async (req, res) => {
+  setTimeout(() => {
+    message = "";
+  }, 1000);
   try {
     const listFilmes = await mcu.findAll();
     console.log(listFilmes);
-    res.render("index.ejs", { listFilmes});
+    res.render("index.ejs", { listFilmes,message});
   } catch (error) {
     res.send(error.message);
   }
@@ -31,7 +36,7 @@ export const getDeletar = async (req, res) => {
         id: req.params.id,
       },
     });
-   
+     message="Filme removido com sucesso!"
     res.redirect("/");
   } catch (error) {
     res.send(error.message);
@@ -40,7 +45,7 @@ export const getDeletar = async (req, res) => {
 
 export const getcadastro = (req, res) => {
   console.log(req.body);
-  res.render("cadastro.ejs");
+  res.render("cadastro.ejs",{message});
 };
 
 export const postcadastro = async (req, res) => {
@@ -59,9 +64,8 @@ export const postcadastro = async (req, res) => {
       !imagem ||
       !iframe
     ) {
-      res.send("Todos os campos são obrigatórios");
-     
-      return res.redirect("/cadastro")
+      message='Error todos os campos devem ser preenchidos!'
+            res.redirect('/cadastro')
     } else {
       // forma mais simples
       await mcu.create({
@@ -73,7 +77,7 @@ export const postcadastro = async (req, res) => {
         iframe,
       });
     }
-
+    message="Filme cadastrado com sucesso!"
     res.redirect("/");
   } catch (error) {
     res.send(error.message);
@@ -84,7 +88,7 @@ export const getEditar = async (req, res) => {
   try {
     const filmeAtual = await mcu.findByPk(req.params.id);
     res.render("editar.ejs", {
-      filmeAtual,
+      filmeAtual,message
     });
   } catch (error) {
     res.send(error.message);
@@ -110,6 +114,7 @@ export const postEditar = async (req, res) => {
         },
       }
     );
+    message="Filme editado com sucesso!"
     res.redirect("/");
   } catch (error) {
     res.send(error.message);
