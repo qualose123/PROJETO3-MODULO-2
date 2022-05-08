@@ -172,14 +172,17 @@ div.btn-container{
 section article.cards{
     height: 300px;
     width: 220px;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeK_faVSMW2D0-EFJ_RbPnFL2fgzFsbhZsnE9g04L4WVSJQD1FyZBy_FoenxnP-WKAzB0&usqp=CAU');
+    background: url('../img/background\ cards.jpg');
     border-radius: 20px;
 }
 section div.card_img{
     display: flex;
     height: 85%;
     justify-content: center;
-
+}
+section div.card_img img{
+   max-height:100%;
+   max-width: 80%;
 }
 article div.card_name{
     height: 10%;
