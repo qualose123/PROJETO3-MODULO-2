@@ -3,11 +3,12 @@
 import { connection } from "../database/connection.js";
 import { mcu } from "../model/mcu.js";
 
+
 export const getIndex = async (req, res) => {
   try {
     const listFilmes = await mcu.findAll();
     console.log(listFilmes);
-    res.render("index.ejs", { listFilmes });
+    res.render("index.ejs", { listFilmes});
   } catch (error) {
     res.send(error.message);
   }
@@ -30,72 +31,87 @@ export const getDeletar = async (req, res) => {
         id: req.params.id,
       },
     });
+   
     res.redirect("/");
   } catch (error) {
     res.send(error.message);
   }
 };
 
-export const getcadastro= (req,res)=> {
-  console.log(req.body)
-  res.render('cadastro.ejs')
-}
+export const getcadastro = (req, res) => {
+  console.log(req.body);
+  res.render("cadastro.ejs");
+};
 
-export const postcadastro= async(req,res)=> {
-  try{
-    const {nome_filme,nome_autores,nome_atores,ano_filme,imagem,iframe}=req.body
+export const postcadastro = async (req, res) => {
+  try {
+    const { nome_filme, nome_autores, nome_atores, ano_filme, imagem, iframe } =
+      req.body;
 
     //aki é uma das formas:
-    // await connection.query(`INSERT INTO mcu (nome_filme, nome_autores, nome_atores, ano_filme,imagem, iframe) VALUES('${nome_filme}', '${nome_autores}', '${nome_atores}', ${ano_filme}, '${imagem}', '${iframe}')`)   
+    // await connection.query(`INSERT INTO mcu (nome_filme, nome_autores, nome_atores, ano_filme,imagem, iframe) VALUES('${nome_filme}', '${nome_autores}', '${nome_atores}', ${ano_filme}, '${imagem}', '${iframe}')`)
 
-    if(!nome_filme || !nome_autores || !nome_atores || !ano_filme || !imagem ||!iframe){
-      res.send('Todos os campos são obrigatórios')
-    }else{
-
-    // forma mais simples
-    await mcu.create({nome_filme,nome_autores,nome_atores,ano_filme,imagem,iframe})
+    if (
+      !nome_filme ||
+      !nome_autores ||
+      !nome_atores ||
+      !ano_filme ||
+      !imagem ||
+      !iframe
+    ) {
+      res.send("Todos os campos são obrigatórios");
+     
+      return res.redirect("/cadastro")
+    } else {
+      // forma mais simples
+      await mcu.create({
+        nome_filme,
+        nome_autores,
+        nome_atores,
+        ano_filme,
+        imagem,
+        iframe,
+      });
     }
-    res.redirect('/')
-  }catch(error){
-    res.send(error.message)
+
+    res.redirect("/");
+  } catch (error) {
+    res.send(error.message);
   }
-}
+};
 
 export const getEditar = async (req, res) => {
   try {
-      const filmeAtual = await mcu.findByPk(req.params.id)
-      res.render('editar.ejs', {
-          filmeAtual
-      })
+    const filmeAtual = await mcu.findByPk(req.params.id);
+    res.render("editar.ejs", {
+      filmeAtual,
+    });
   } catch (error) {
-      res.send(error.message)
+    res.send(error.message);
   }
-}
+};
 
 export const postEditar = async (req, res) => {
   try {
-      const {
-          nome_filme,
-          nome_autores,
-          nome_atores,
-          ano_filme,
-          imagem,
-          iframe
-      } = req.body
-      await mcu.update({
+    const { nome_filme, nome_autores, nome_atores, ano_filme, imagem, iframe } =
+      req.body;
+    await mcu.update(
+      {
         nome_filme: nome_filme,
         nome_autores: nome_autores,
         nome_atores: nome_atores,
-        ano_filme:  ano_filme,
+        ano_filme: ano_filme,
         imagem: imagem,
-          iframe: iframe
-      }, {
-          where: {
-              id: req.params.id
-          }
-      })
-      res.redirect('/')
+        iframe: iframe,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.redirect("/");
   } catch (error) {
-      res.send(error.message)
+    res.send(error.message);
   }
-}
+};
